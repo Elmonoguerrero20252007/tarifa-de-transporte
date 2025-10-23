@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifas de transporte</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: rgb(224, 224, 224);
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let nombre=prompt("Ingresar nombre: ");
+        let tipo_t=parseInt(prompt("Ingresar tipo de transporte: "));
+        let condicion=prompt("¿es estudiante o adulto mayor?, indique cual:");
+        let valor;
+        let colortexto;
+        switch(tipo_t){
+            case 1:
+                valor=2500;
+                transporte="Bus"
+            break;
+            case 2:
+                valor=2800;
+                transporte="Metro"
+            break;
+            case 3:
+                valor=5000;
+                transporte="Taxi"
+            break;
+            case 4:
+                valor=10000;
+                transporte="Inter municipal"
+            break;
+            default:
+                document.writeln("numero invalido");
+        }
+        let descuento=0
+        if(condicion=="estudiante"){
+            descuento=0.20;
+            texto="20%";
+        }else if(condicion=="adulto mayor"){
+            descuento=0.30;
+            texto="30%";
+        }else{
+            descuento=0;
+            texto="0%";
+        }
+        let total=valor-(valor*descuento);
+        document.writeln("el usuario: "+nombre+"<br>");
+        document.writeln("transporte: "+transporte+"<br>");
+        document.writeln("condicion: "+condicion+"<br>")
+        document.writeln("valor base: $"+valor+"<br>");
+        document.writeln("descuento: "+texto+"<br>");
+        document.writeln("total a pagar: $"+total+"<br>");
+    </script>
+</body>
+</html>
+</body>
